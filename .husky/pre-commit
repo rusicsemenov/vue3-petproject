@@ -7,9 +7,19 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
+# Stash unstaged changes
+STASH_NAME="pre-commit-$(date +%s)"
+git stash push -k -u -m "$STASH_NAME"
+
+# Run Prettier
 npx prettier --write .
 if [ $? -ne 0 ]; then
   echo "Prettier formatting failed. Commit aborted."
+  git stash pop -q
   exit 1
 fi
 
+# Re-add originally staged files
+git stash pop -q
+STAGED_FILES=$(git diff --name-only --cached)
+echo "$STAGED_FILES" | xargs git add

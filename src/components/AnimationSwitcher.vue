@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { useSettingsStore } from '@/stores/settings.ts';
+    import { useSettingsStore } from '@/stores/settings.ts';
 
-const settings = useSettingsStore();
+    const settings = useSettingsStore();
 </script>
 
 <template>

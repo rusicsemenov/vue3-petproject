@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { onMounted, ref } from 'vue';
-import { useSettingsStore } from '@/stores/settings.ts';
+    import { onMounted, ref } from 'vue';
+    import { useSettingsStore } from '@/stores/settings.ts';
 
-const settings = useSettingsStore();
+    const settings = useSettingsStore();
 
     export type NonEmptyArray<A> = Array<A> & {
         0: A;
