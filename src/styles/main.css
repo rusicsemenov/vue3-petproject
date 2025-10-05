@@ -1,0 +1,6 @@
+@import 'tailwindcss';
+@import 'primeicons/primeicons.css';
+
+:root {
+    --index: calc(1vw + 1vh);
+}
