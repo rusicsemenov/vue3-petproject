@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-    import MainLayout from '@/components/layouts/MainLayout.vue';
-    import { useFilmsStore } from '@/stores/films.ts';
-    import { useRoute } from 'vue-router';
-    import { computed } from 'vue';
+import MainLayout from '@/components/layouts/MainLayout.vue';
+import { useFilmsStore } from '@/stores/films.ts';
+import { useRoute } from 'vue-router';
+import { computed } from 'vue';
 
-    const route = useRoute();
+const route = useRoute();
     const filmsStore = useFilmsStore();
     const filmId = Number(route.params.id);
 
@@ -83,7 +83,7 @@
                     </div>
                 </div>
                 <div
-                    class="-mt-12 -ml-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden"
+                    class="-mt-12 -ml-12 flex justify-center p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden"
                 >
                     <img
                         :alt="film.show.name"

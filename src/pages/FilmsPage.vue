@@ -37,7 +37,7 @@
 
 <template>
     <MainLayout>
-        <div class="flex items-center justify-between">
+        <div class="my-3 flex flex-wrap items-center justify-between">
             <h1 class="my-5 text-3xl">Films page</h1>
             <input
                 :value="route.query.search"
