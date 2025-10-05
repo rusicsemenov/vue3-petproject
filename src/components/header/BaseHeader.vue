@@ -1,8 +1,9 @@
 <script lang="ts" setup>
-    import BasketController from '@/components/header/BasketController.vue';
-    import { useRouter } from 'vue-router';
+import BasketController from '@/components/header/BasketController.vue';
+import { useRouter } from 'vue-router';
+import LanguageSelector from '@/components/LanguageSelector.vue';
 
-    const router = useRouter();
+const router = useRouter();
 
     const isActive = (path: string) => {
         return router.currentRoute.value.path === path
@@ -37,11 +38,12 @@
                     :class="isActive(element.href)"
                     :to="element.href"
                 >
-                    {{ element.name }}
+                    {{ $t(element.name) }}
                 </RouterLink>
             </div>
 
             <BasketController />
+            <LanguageSelector />
         </nav>
     </header>
 </template>
