@@ -1,0 +1,15 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+pnpx tsc --noEmit
+if [ $? -ne 0 ]; then
+  echo "TypeScript type check failed. Commit aborted."
+  exit 1
+fi
+
+pnpx prettier --write .
+if [ $? -ne 0 ]; then
+  echo "Prettier formatting failed. Commit aborted."
+  exit 1
+fi
+

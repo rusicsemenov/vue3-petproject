@@ -44,4 +44,3 @@ EXPOSE 4173
 
 # Start the app
 CMD ["pnpm", "preview", "--host"]
-
