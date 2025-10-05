@@ -37,10 +37,10 @@
                     >
                         {{ $t('Get started') }}
                     </RouterLink>
-                    <a class="text-sm/6 font-semibold text-gray-900" href="#">
-                        {{ $t('Learn more') }}
+                    <RouterLink class="text-sm/6 font-semibold text-gray-900" to="/marketplace">
+                        {{ $t('Check price') }}
                         <span aria-hidden="true">→</span>
-                    </a>
+                    </RouterLink>
                 </div>
             </div>
         </div>

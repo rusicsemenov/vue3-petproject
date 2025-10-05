@@ -3,7 +3,7 @@ export const de = {
         hello: 'Hallo Welt',
     },
     'Use our film and show search.': 'Verwenden Sie unsere Film- und Showsuche.',
-    'Go to search': 'Zur Suche gehen',
+    'Check price': 'Preis prüfen',
     'Welcome to the demo site!': 'Willkommen',
     'This is a demo project to test a new functions in the vue3 with pinia and tailwindcss.':
         'Dies ist ein Demo-Projekt, um neue Funktionen in Vue3 mit Pinia und TailwindCSS zu testen.',

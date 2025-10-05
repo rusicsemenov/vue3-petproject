@@ -1,41 +1,17 @@
 <script lang="ts" setup>
     import MainLayout from '@/components/layouts/MainLayout.vue';
-    import { useCounterStore } from '@/stores/counter.ts';
+    import { useToast } from 'vue-toastification';
+    import { useBasketStore } from '@/stores/basket.ts';
+    import type { TBasketType } from '@/types/basket.types.ts';
+    import { tiers } from '@/constants/tiers.constants.ts';
 
-    const counterStore = useCounterStore();
+    const basketStore = useBasketStore();
+    const toast = useToast();
 
-    const tiers = [
-        {
-            name: 'Hobby',
-            id: 'tier-hobby',
-            href: '#',
-            priceMonthly: '$29',
-            description: "The perfect plan if you're just getting started with our product.",
-            features: [
-                '25 products',
-                'Up to 10,000 subscribers',
-                'Advanced analytics',
-                '24-hour support response time',
-            ],
-            featured: false,
-        },
-        {
-            name: 'Enterprise',
-            id: 'tier-enterprise',
-            href: '#',
-            priceMonthly: '$99',
-            description: 'Dedicated support and infrastructure for your company.',
-            features: [
-                'Unlimited products',
-                'Unlimited subscribers',
-                'Advanced analytics',
-                'Dedicated support representative',
-                'Marketing automations',
-                'Custom integrations',
-            ],
-            featured: true,
-        },
-    ];
+    const incrementAndNotify = (type: TBasketType) => {
+        basketStore.addToBasket(type);
+        toast.success(`You have ${basketStore.basket[type]} items in your basket'`);
+    };
 </script>
 
 <template>
@@ -141,7 +117,6 @@
                             tier.featured ? 'text-gray-300' : 'text-gray-600',
                             'mt-8 space-y-3 text-sm/6 sm:mt-10',
                         ]"
-                        role="list"
                     >
                         <li v-for="feature in tier.features" :key="feature" class="flex gap-x-3">
                             {{ feature }}
@@ -155,7 +130,7 @@
                                 : 'text-indigo-600 inset-ring inset-ring-indigo-200 hover:inset-ring-indigo-300 focus-visible:outline-indigo-600',
                             'mt-8 block rounded-md px-3.5 py-2.5 text-center text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 sm:mt-10',
                         ]"
-                        @click="counterStore.increment()"
+                        @click="() => incrementAndNotify(tier.type)"
                     >
                         Get started today
                     </button>
