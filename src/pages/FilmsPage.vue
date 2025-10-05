@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-    import MainLayout from '@/components/layouts/MainLayout.vue';
-    import { useFilmsStore } from '@/stores/films.ts';
-    import { onMounted, watch } from 'vue';
-    import { useRoute, useRouter } from 'vue-router';
+import MainLayout from '@/components/layouts/MainLayout.vue';
+import { useFilmsStore } from '@/stores/films.ts';
+import { onMounted, watch } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
 
-    const getSearchQuery = (): string | undefined | null => {
+const getSearchQuery = (): string | undefined | null => {
         return Array.isArray(route.query.search) ? route.query.search[0] : route.query.search;
     };
 
@@ -67,7 +67,7 @@
         >
             <RouterLink
                 v-for="film in filmsStore.films"
-                :key="film.show.is"
+                :key="film.show.id"
                 :to="`/film/${film.show.id}`"
                 class="group"
             >

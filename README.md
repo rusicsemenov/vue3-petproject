@@ -1,6 +1,7 @@
 # Demo – Vue 3 + Vite
 
-A Vue 3 application scaffolded with Vite. Includes TypeScript, Pinia, Vue Router, Tailwind CSS v4, Toast notifications, unit tests (Vitest) and e2e tests (Playwright).
+A Vue 3 application scaffolded with Vite. Includes TypeScript, Pinia, Vue Router, Tailwind CSS v4, Toast notifications,
+unit tests (Vitest) and e2e tests (Playwright).
 
 ## Prerequisites
 
@@ -40,6 +41,27 @@ Notes:
 - vue-toastification
 - Vitest + @vue/test-utils (unit)
 - Playwright (e2e)
+
+## Docker
+
+This project includes a multi-stage Dockerfile for optimized production builds.
+
+### Build the Docker image
+
+```sh
+docker build -t vue-demo .
+```
+
+### Run the container
+
+```sh
+docker run --rm -p 4173:4173 vue-demo
+```
+
+- The app will be available at [http://localhost:4173](http://localhost:4173)
+- The container uses a multi-stage build to keep the image small and only includes production dependencies and the built
+  app.
+- The preview server is started with `--host` so it is accessible from outside the container.
 
 ## App Entry
 
