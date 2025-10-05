@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import MainLayout from '@/components/layouts/MainLayout.vue';
-import { useCounterStore } from '@/stores/counter.ts';
+    import MainLayout from '@/components/layouts/MainLayout.vue';
+    import { useCounterStore } from '@/stores/counter.ts';
 
-const counterStore = useCounterStore();
+    const counterStore = useCounterStore();
 
     const tiers = [
         {

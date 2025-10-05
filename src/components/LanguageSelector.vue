@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { availableLocales } from '@/pluguns/i18n';
+    import { availableLocales } from '@/pluguns/i18n';
 </script>
 
 <template>

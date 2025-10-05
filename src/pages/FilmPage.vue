@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import MainLayout from '@/components/layouts/MainLayout.vue';
-import { useFilmsStore } from '@/stores/films.ts';
-import { useRoute } from 'vue-router';
-import { computed } from 'vue';
+    import MainLayout from '@/components/layouts/MainLayout.vue';
+    import { useFilmsStore } from '@/stores/films.ts';
+    import { useRoute } from 'vue-router';
+    import { computed } from 'vue';
 
-const route = useRoute();
+    const route = useRoute();
     const filmsStore = useFilmsStore();
     const filmId = Number(route.params.id);
 
